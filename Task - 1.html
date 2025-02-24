@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            background-image: url("redbgm.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #333;
+            padding: 15px;
+            text-align: center;
+            transition: background 0.3s;
+            z-index: 1000;
+        }
+
+        .navbar.scrolled {
+            background: #222;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+            transition: color 0.3s, background 0.3s;
+        }
+
+        .navbar a:hover {
+            background: white;
+            color: #333;
+            border-radius: 5px;
+        }
+
+        /* Welcome Section */
+        .content {
+            padding-top: 100px;
+            text-align: center;
+        }
+
+        .welcome-heading {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff8c00, #ff0080, #8a2be2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 20px rgba(255, 140, 0, 0.7);
+            animation: glowEffect 3s infinite alternate;
+        }
+
+        @keyframes glowEffect {
+            0% { text-shadow: 0px 0px 10px rgba(255, 140, 0, 0.7); }
+            100% { text-shadow: 0px 0px 30px rgba(255, 0, 128, 0.9); }
+        }
+
+        .welcome-subtext {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: lighter;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .services h2 {
+            color: #ff0080;
+            text-shadow: 0px 0px 10px rgba(152, 140, 140, 0.5);
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .service-box {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .service-box:hover {
+            transform: scale(1.05);
+        }
+
+        .service-box a {
+            text-decoration: none;
+            color: #ff0080;
+            font-weight: bold;
+        }
+
+
+        /* About Section */
+        .about {
+            padding: 50px 20px;
+            text-align: center;
+            color: #ff0080;
+            text-shadow: 0px 0px 10px rgba(152, 140, 140, 0.5);
+        }
+
+        .about-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .about-box {
+            width: 250px;
+            height: 350px;
+            background: #222;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .about-box h3 {
+            margin: 10px 0;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .about-box img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .about-box:hover {
+            transform: scale(1.1);
+        }
+
+                /* Contact Section */
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background: #222;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            flex-wrap: wrap;
+        }
+        .contact-title {
+            color: #02cbfd; 
+        }
+
+        .socials-title {
+            color: #02cbfd; 
+            
+        }
+
+
+        .contact-info {
+            flex: 1;
+            text-align: left;
+        }
+
+        .socials {
+            flex: 1;
+            text-align: right;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .logo:hover {
+            transform: scale(1.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <a href="#c1">Home</a>
+        <a href="#c2">Services</a>
+        <a href="#c3">About</a>
+        <a href="#c4">Contact</a>
+        
+    </nav>
+
+    <div class="content" id="c1">
+        <h1 class="welcome-heading">Welcome to the Landing Page</h1>
+        <p class="welcome-subtext">Showcasing Knowledge and Creative Vision within a Website using HTML, CSS, JavaScript for Prodigy Infotech.</p>
+    </div>
+
+    <!--Services Section-->
+    <div class="services" id="c2">
+        <h2>Services</h2>
+        <div class="services-container">
+            <div class="service-box">
+                <h3>HTML 5</h3>
+                <p>HTML5 is the latest standard of Hypertext Markup Language, the code that describes the structure and presentation of web pages.</p>
+                <a href="https://www.w3schools.com/html/default.asp">Learn More</a>
+            </div>
+            <div class="service-box">
+                <h3>CSS </h3>
+                <p>Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML.</p>
+                <a href="https://www.w3schools.com/css/default.asp">Learn More</a>
+            </div>
+            <div class="service-box">
+                <h3>JavaScript (JS)</h3>
+                <p>JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else.</p>
+                <a href="https://www.w3schools.com/js/default.asp">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="about" id="c3">
+        <h2>About my Hobbies</h2>
+        <div class="about-container">
+            <div class="about-box">
+                <h3>Reading Books</h3>
+                <img src="readbook1.jpg" alt="Reading Books">
+            </div>
+            <div class="about-box">
+                <h3>Workouts</h3>
+                <img src="gymwork1.jpg" alt="Workouts">
+            </div>
+            <div class="about-box">
+                <h3>Travelling</h3>
+                <img src="travel.jpg" alt="Travelling">
+            </div>
+            <div class="about-box">
+                <h3>Enjoying Music</h3>
+                <img src="music.jpg" alt="Enjoying Music">
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-container" id="c4">
+        <div class="contact-info">
+            <h2 class="contact-title">Contact</h2>
+            <p><b>S.S. Adithya Varma</b></p>
+            <p><b>Email:</b> avarma77777@gmail.com</p>
+            <p><b>Phone:</b> +91 8247856798</p>
+        </div>
+
+        <div class="socials">
+            <h2 class="socials-title">My Socials</h2>
+            <div class="logo-container">
+                <a href="https://www.linkedin.com/in/adithya-varma-71408a25a" target="_blank">
+                    <img src="linkedin img.png" alt="LinkedIn" class="logo">
+                </a>
+                <a href="https://www.instagram.com/im.just.adi/" target="_blank">
+                    <img src="instagram2 img.jpg" alt="Instagram" class="logo">
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>© 2025 Adithya Varma. All rights reserved.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
